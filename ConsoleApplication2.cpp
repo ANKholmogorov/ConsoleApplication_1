@@ -5,15 +5,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <malloc.h>
-char* settime(struct tm *u)
+char* settime(struct tm *u) 
 {
     char s[40];
     char *tmp;
     for (int i = 0; i < 40; i++) s[i] = 0;
     int length = strftime(s, 40, "%d.%m.%Y %H:%M:%S, %A", u);
-    tmp = (char*)malloc(sizeof(s));
-    strcpy(tmp, s);
-    return(tmp);
+    tmp = (char*)malloc(sizeof(s)); 
+    strcpy(tmp, s);   
     }
 int main()
 {
