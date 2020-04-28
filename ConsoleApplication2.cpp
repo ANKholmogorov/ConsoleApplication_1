@@ -5,11 +5,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <malloc.h>
+#include <functional>
+#include <string>
+
+using namespace std;
+
+
 char* settime(struct tm *u) 
 {
     char s[40];
-    char *tmp;
-    for (int i = 0; i < 40; i++) s[i] = 0;
+    char *tmp; 
+    for (int i = 0; i < 1; i++) s[i] = 0;
     int length = strftime(s, 40, "%d.%m.%Y %H:%M:%S, %A", u);
     tmp = (char*)malloc(sizeof(s)); 
     strcpy(tmp, s);   
@@ -25,5 +31,11 @@ int main()
     f = settime(u);
     puts(f);
     getchar();
+
+    std::string s = "123";
+    std::hash<std::string> hash_fn;
+    size_t hash = hash_fn(s);
+    std::cout << hash << '\n';
+   
     return 0;
     }
