@@ -32,8 +32,8 @@ int main()
     puts(f);
     getchar();
 
-    std::string s = "123";
-    std::hash<std::string> hash_fn;
+    std::int16_t s = 1 + 2 + 3 + 4 + 5 + 6;
+    std::hash<std::int16_t> hash_fn;
     size_t hash = hash_fn(s);
     std::cout << hash << '\n';
    
